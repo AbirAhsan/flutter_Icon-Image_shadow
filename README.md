@@ -1,16 +1,74 @@
 # fluttertest
 
-A new Flutter project.
+A new Flutter demo project for Icon and Image shadow.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+*For Icon's Shadow You can use* **`IconShadowWidget()`**.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_2020-06-12-00-00-15-655_com example fluttertest](https://user-images.githubusercontent.com/24518666/84423219-f1ed4f80-ac3f-11ea-86ff-76b2bc60773d.jpg)
+
+
+***How to use:***
+
+ **1. add dependencies to** `pubspec.yaml`**:**
+
+     icon_shadow: ^1.0.1
+
+ **2. Import your Dart code :**
+
+    import 'package:icon_shadow/icon_shadow.dart';
+
+ **3. add icons:**
+
+    Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+            IconShadowWidget(
+              Icon(
+                Icons.add_circle,
+                color: Colors.red,
+                size: 100.0,
+              ),
+            ),
+            IconShadowWidget(
+              Icon(
+                Icons.add_circle,
+                color: Colors.red,
+                size: 100.0,
+              ),
+              shadowColor: Colors.black,
+            ),
+            IconShadowWidget(
+              Icon(
+                Icons.add_circle,
+                color: Colors.red,
+                size: 100.0,
+              ),
+              shadowColor: Colors.black,
+              showShadow: false,
+            ),
+                  ],
+                ),
+              ),
+
+**And for Image shadow you can use this code-**
+```
+Container(
+  decoration: BoxDecoration(
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.8),
+        spreadRadius: 5,
+        blurRadius: 3,
+        offset: Offset(5, 7), // changes position of shadow
+      ),
+    ],
+  ),
+  child: Image.asset("assets/images/download.png"),
+)
+
+```
